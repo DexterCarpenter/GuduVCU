@@ -1,3 +1,25 @@
+# Based off of https://github.com/espressif/esp-idf/blob/master/.gitignore
+
+.config
+*.o
+*.pyc
+
 build/
 sdkconfig
 sdkconfig.old
+
+# clang config (for LSP)
+.clangd
+
+# VS Code Settings
+.vscode/
+
+# eclipse setting
+.settings
+
+# VIM files
+*.swp
+*.swo
+
+# MacOS directory files
+.DS_Store
