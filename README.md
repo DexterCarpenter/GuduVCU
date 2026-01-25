@@ -3,6 +3,8 @@ Documentation repository: [GuduVCU-docs](https://github.com/DexterCarpenter/Gudu
 
 This repository hosts the control software for the 'Gudu' EV conversion project.
 
+
 #### Contributors:
 - Colin Hale-Brown
 - Dexter Carpenter
+- Milan Donhowe
