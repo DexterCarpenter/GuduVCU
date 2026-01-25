@@ -5,7 +5,6 @@
 *.pyc
 
 build/
-sdkconfig
 sdkconfig.old
 
 # clang config (for LSP)
