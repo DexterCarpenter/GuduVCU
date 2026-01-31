@@ -20,7 +20,7 @@
 
 #else
 
-#define AI0 GPIO_NUM_33 
+#define AI0 GPIO_NUM_33  //ADC1_CH5
 #define AI1 GPIO_NUM_32 
 #define AI2 GPIO_NUM_35 
 #define AI3 GPIO_NUM_34 
