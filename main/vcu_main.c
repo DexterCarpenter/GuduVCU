@@ -37,6 +37,7 @@ void config_gpio(){
     gpio_config(&do_conf);
 
     /* analog big boiis */
+    /*
     gpio_config_t aio_conf = {};
     aio_conf.intr_type = GPIO_INTR_DISABLE;
     aio_conf.mode = GPIO_MODE_INPUT;
@@ -44,7 +45,7 @@ void config_gpio(){
     aio_conf.pull_down_en = GPIO_PULLDOWN_DISABLE;
     aio_conf.pull_up_en = GPIO_PULLDOWN_DISABLE;
     gpio_config(&aio_conf);
-
+    */
     // ADC1 (AI0, AI1, AI2, etc.)
     //adc1_config_width(ADC_WIDTH_BIT_12);
     //adc_
