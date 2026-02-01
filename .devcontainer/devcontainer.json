@@ -13,9 +13,14 @@
 			},
 			"extensions": [
 				"espressif.esp-idf-extension",
-				"espressif.esp-idf-web"
+				"espressif.esp-idf-web",
+				"mhutchie.git-graph",
+				"ms-vscode.cpptools"
 			]
 		}
 	},
-	"runArgs": ["--privileged"]
+	"runArgs": [
+		"--privileged",
+		"--device=/dev/ttyUSB0:/dev/ttyUSB0"
+	]
 }
