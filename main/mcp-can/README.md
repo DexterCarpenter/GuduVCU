@@ -1,0 +1,1 @@
+Stolen from: https://github.com/dedalqq/esp32-mcp2515/tree/master

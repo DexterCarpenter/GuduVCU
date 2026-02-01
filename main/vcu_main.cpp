@@ -14,6 +14,13 @@
 #include "esp_adc/adc_cali.h"
 #include "esp_adc/adc_cali_scheme.h"
 #include "esp_log.h"
+#include "mcp2515.h"
+#include "driver/spi_master.h"
+
+#define GPIO_MOSI           GPIO_NUM_12
+#define GPIO_MISO           GPIO_NUM_13
+#define GPIO_SCLK           GPIO_NUM_14
+#define GPIO_CS             GPIO_NUM_15
 
 // initialize all hardware
 void config_gpio(){
@@ -33,7 +40,7 @@ void config_gpio(){
     do_conf.mode = GPIO_MODE_INPUT_OUTPUT_OD;
     do_conf.pin_bit_mask = (1<<DO0) | (1<<DO1) | (1<<DO2) | (1<<DO3);
     do_conf.pull_down_en = GPIO_PULLDOWN_DISABLE;
-    do_conf.pull_up_en = GPIO_PULLDOWN_DISABLE;
+    do_conf.pull_up_en = GPIO_PULLUP_DISABLE;
     gpio_config(&do_conf);
 
     /* analog big boiis */
@@ -52,9 +59,34 @@ void config_gpio(){
 
 }
 
+void can_config(){
+    spi_device_handle_t handle;
+
+    //Configuration for the SPI bus
+    spi_bus_config_t buscfg = {
+        .mosi_io_num = GPIO_MOSI,
+        .miso_io_num = GPIO_MISO,
+        .sclk_io_num = GPIO_SCLK,
+        .quadwp_io_num = -1,
+        .quadhd_io_num = -1
+    };
+
+    spi_device_interface_config_t devcfg = {
+        .command_bits = 0,
+        .address_bits = 0,
+        .dummy_bits = 0,
+        .clock_speed_hz = 5000000,
+        .duty_cycle_pos = 128,
+        .mode = 0,
+        .spics_io_num = GPIO_CS,
+        .cs_ena_posttrans = 3,
+        .queue_size = 3
+    };
+}
+
 static int adc_raw[2][10];
 const static char *TAG = "EXAMPLE";
-void app_main(){
+extern "C" void app_main(){
     printf("[*] GuduVCU start-up procedure...");
 
     
