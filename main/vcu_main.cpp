@@ -75,11 +75,16 @@ void can_config(){
         .command_bits = 0,
         .address_bits = 0,
         .dummy_bits = 0,
-        .clock_speed_hz = 5000000,
-        .duty_cycle_pos = 128,
         .mode = 0,
-        .spics_io_num = GPIO_CS,
+        .clock_source = SPI_CLK_SRC_DEFAULT,
+        .duty_cycle_pos = 128,
+        .cs_ena_pretrans = 0,
         .cs_ena_posttrans = 3,
+        .clock_speed_hz = 5000000,
+        .input_delay_ns = 0,
+        .sample_point = SPI_SAMPLING_POINT_PHASE_0,
+        .spics_io_num = GPIO_CS,
+        .flags = 0,
         .queue_size = 3
     };
 }
