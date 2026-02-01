@@ -15,7 +15,8 @@
 				"espressif.esp-idf-extension",
 				"espressif.esp-idf-web",
 				"mhutchie.git-graph",
-				"ms-vscode.cpptools"
+				"ms-vscode.cpptools",
+				"llvm-vs-code-extensions.vscode-clangd"
 			]
 		}
 	},
