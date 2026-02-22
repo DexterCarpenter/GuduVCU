@@ -3,7 +3,7 @@
 .config
 *.o
 *.pyc
-
+managed_components/
 build/
 components/
 sdkconfig.old

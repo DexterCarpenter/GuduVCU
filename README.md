@@ -4,6 +4,13 @@ Documentation repository: [GuduVCU-docs](https://github.com/DexterCarpenter/Gudu
 This repository hosts the control software for the 'Gudu' EV conversion project.
 
 
+# INIT PROCEDURE
+-- 1. signal in from Ignition switch A2
+-- 2. on in from A2 to power out for SW0 (ign switch)
+
+https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/gpio.html
+
+
 #### Analog Pins
 
 | Name | GPIO # | Function            | 24-Pin ID |
